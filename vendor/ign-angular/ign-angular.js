@@ -351,12 +351,13 @@ angular.module('ign.angular.layer', ['ui.bootstrap', 'angularSpinner'])
     
     var self = this;
     var spinnerKey = 'spinner-' + $attrs.index;
-    var url = $attrs.url;
+    var url = $scope.$eval($attrs.url);
     var index = $attrs.index;
     $scope.layers = [];
     $scope.layersSelect = [];
 
-    LayerService.getWMTSLayersFromCapabilities($attrs.url, $scope.layers).then(function(layers) {
+    
+    LayerService.getWMTSLayersFromCapabilities(url, $scope.layers).then(function(layers) {
       $scope.$broadcast('layersLoaded');
     });
         
@@ -531,7 +532,15 @@ angular.module('ign.angular.layer', ['ui.bootstrap', 'angularSpinner'])
     return $.when.apply($, requests).done(function() {
       var parser = new ol.format.WMTSCapabilities();
       var result = {};
-      if (self.urls.length > 1) {
+      if (arguments[0] instanceof Document === true) {
+        var response = arguments;
+        result = parser.read(response[0]);
+        layers.push({
+          url : result.OperationsMetadata.GetTile.DCP.HTTP.Get[result.OperationsMetadata.GetTile.DCP.HTTP.Get.length - 1].href,
+          tileMatrixSet: result.Contents.TileMatrixSet,
+          layers : result.Contents.Layer
+        });
+      } else {
         var responses = arguments;
         for ( var i = 0; i < responses.length; i++) {
           result = parser.read(responses[i][0]);
@@ -541,14 +550,6 @@ angular.module('ign.angular.layer', ['ui.bootstrap', 'angularSpinner'])
             layers : result.Contents.Layer
           });
         }
-      } else {
-        var response = arguments;
-        result = parser.read(response[0]);
-        layers.push({
-          url : result.OperationsMetadata.GetTile.DCP.HTTP.Get[result.OperationsMetadata.GetTile.DCP.HTTP.Get.length - 1].href,
-          tileMatrixSet: result.Contents.TileMatrixSet,
-          layers : result.Contents.Layer
-        });
       }
     });
   };
