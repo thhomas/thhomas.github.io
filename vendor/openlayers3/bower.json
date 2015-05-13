@@ -1,0 +1,8 @@
+{
+    "name": "openlayers",
+    "version": "3.1.2",
+    "main": [
+    	"build/ol.js",
+    	"build/ol.css"
+  	]
+}
