@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../vendor/managed/openlayers3/build/ol.css" type="text/css">
+    <link rel="stylesheet" href="../vendor/managed/bootstrap/dist/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../vendor/managed/seiyria-bootstrap-slider/css/bootstrap-slider.css" type="text/css">
+    <link rel="stylesheet" href="../dist/ign-angular.css" type="text/css">
+    <style>
+		  /* Space out content a bit */
+			body {
+		  		padding-top: 20px;
+		  		padding-bottom: 20px;
+		  		font: 'Open-Sans';
+			}
+			@media (min-width: 1400px) {
+				.container {
+					width: 1370px;
+				}
+			}
+    </style>
+</head>
+<body ng-app="example1">
+  <div class="jumbotron" ng-controller="MainCtrl">
+	  <div class="container">
+	    <div class="navbar navbar-default navbar-static-top" style="margin-bottom:0px" role="navigation">
+		    <div class="container-fluid">
+		      <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#evoterr-navbar-collapse" ng-click="setHeight()" style="">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="glyphicon glyphicon-chevron-down"></span>
+			      </button>
+		      </div>
+		      <div class="collapse navbar-collapse" id="evoterr-navbar-collapse" style="background-color: white;">
+            <form class="navbar-form navbar-left" role="search">Layers
+              <layer-selector map-object="map" url="http://wxs-i.ign.fr/ifdag24bifbn3mavuxsp5bh4/geoportail/wmts?SERVICE=WMTS&REQUEST=GetCapabilities" index="0"></layer-selector>
+              <layer-selector map-object="map" url="geoportail.xml" index="1"></layer-selector>
+            </form>
+            <form class="navbar-form navbar-right">
+              <geocoder geocoderUrl="http://wxs.ign.fr/61fs25ymczag0c67naqvvmap/ols/apis/completion" map-object="map"></geocoder>
+            </form>
+          </div> <!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </div><!-- /.navbar-default-->
+      <div ol-map full-screen-control permalien-control controls="['display', 'permalink', 'tuning']" class="map"></div>
+    </div>
+  </div>
+		
+	<script src="../vendor/managed/angular/angular.js"></script>
+	<script src="../vendor/managed/jquery/dist/jquery.min.js"></script>
+  <script src="../vendor/managed/openlayers3/build/ol-debug.js"></script>
+	<script src="../vendor/managed/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="../vendor/managed/spin.js/spin.js"></script>
+	<script src="../vendor/managed/angular-spinner/angular-spinner.js"></script>
+  <script src="../vendor/managed/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="../vendor/managed/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+	<script src="../dist/ign-angular.js"></script>
+	<script src="example-1.js"></script>
+</body>
+</html>
