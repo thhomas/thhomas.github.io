@@ -1,4 +1,4 @@
-/*! ign-angular - v0.1.0 - 2015-05-13 */
+/*! ign-angular - v0.1.0 - 2015-05-18 */
 'use strict';
 
 /**
@@ -707,11 +707,15 @@ angular.module('ign.angular.map', ['ign.angular.layer', 'ign.angular.control'])
       
       var mapRowElement = element.children()[0];
       var sliderRowElement = element.children()[1];
-  
+
+      var renderer = 'webgl';
+      if(!ol.has.WEBGL) {
+        renderer = 'canvas';
+      }
       
       me.olMap = new ol.Map({
         target: mapRowElement,
-        renderer: 'webgl',
+        renderer: renderer,
         view: new ol.View({
           center: center,
           zoom: zoom,
@@ -932,18 +936,18 @@ angular.module('ign.angular.map', ['ign.angular.layer', 'ign.angular.control'])
             var width = 0;
             var height = 0;
             if(displayControlMode === 'hSlider') {
-              width = ctx.canvas.width * ($('input[ng-hide="hideVerticalSlider"]')[0].value / 100);
+              width = ctx.canvas.width * (hSwipeValue / 100);
             } else if (displayControlMode === 'vSlider') {
-              height = ctx.canvas.height * (1 - ($('input[ng-hide="hideHorizontalSlider"]')[0].value / 100));
+              height = ctx.canvas.height * (1 - vSwipeValue / 100);
             }
             ctx.rect(width, height, ctx.canvas.width - width, ctx.canvas.height - height);
           } else {
-            var radius = 75;
+            var radius = ctx.canvas.height/4;
             if (me.mousePosition) {
               // only show a circle around the mouse
               ctx.arc(me.mousePosition[0] * pixelRatio, me.mousePosition[1] * pixelRatio,
                   radius * pixelRatio, 0, 2 * Math.PI);
-              ctx.lineWidth = 5 * pixelRatio;
+              ctx.lineWidth = 0;
               ctx.strokeStyle = 'rgba(0,0,0,0.5)';
               ctx.stroke();
             }
