@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="vendor/openlayers3/build/ol.css" type="text/css">
-    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="vendor/seiyria-bootstrap-slider/css/bootstrap-slider.css" type="text/css">
-    <link rel="stylesheet" href="vendor/ign-angular/ign-angular.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/ol3-build/build/ol.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/css/bootstrap-slider.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/ign-angular/dist/ign-angular.css" type="text/css">
     <style>
 		  /* Space out content a bit */
 			body {
@@ -32,8 +32,8 @@
 		      </div>
 		      <div class="collapse navbar-collapse" id="evoterr-navbar-collapse" style="background-color: white;">
             <form class="navbar-form navbar-left" role="search">Layers
-              <layer-selector map-object="map" url="'http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml'" index="0"></layer-selector>
-              <layer-selector map-object="map" url="['http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml', 'http://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/WMTS/1.0.0/WMTSCapabilities.xml']" index="1"></layer-selector>
+              <layer-selector map-object="map" wmts-url="'http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml'" static-layer="['osm', 'google', 'mapbox']" index="0"></layer-selector>
+              <layer-selector map-object="map" wmts-url="['http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml', 'http://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/WMTS/1.0.0/WMTSCapabilities.xml']" static-layer="['osm', 'google', 'mapbox']" index="1"></layer-selector>
                           </form>
             <form class="navbar-form navbar-right">
               <geocoder geocoderUrl="http://wxs.ign.fr/61fs25ymczag0c67naqvvmap/ols/apis/completion" map-object="map"></geocoder>
@@ -41,19 +41,19 @@
           </div> <!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </div><!-- /.navbar-default-->
-      <div ol-map full-screen-control permalien-control controls="['display', 'permalink', 'tuning']" class="map"></div>
+      <div ol-map controls="['3d', 'display', 'permalink', 'tuning']" class="map"></div>
     </div>
   </div>
 		
-	<script src="vendor/angular/angular.js"></script>
-	<script src="vendor/jquery/dist/jquery.min.js"></script>
-  <script src="vendor/openlayers3/build/ol-debug.js"></script>
-	<script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
-	<script src="vendor/spin.js/spin.js"></script>
-	<script src="vendor/angular-spinner/angular-spinner.js"></script>
-  <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script src="vendor/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
-	<script src="vendor/ign-angular/ign-angular.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/ol3-build/build/ol-debug.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="bower_components/spin.js/spin.js"></script>
+	<script src="bower_components/angular-spinner/angular-spinner.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+	<script src="bower_components/ign-angular/dist/ign-angular.js"></script>
 	<script src="js/example-1.js"></script>
 </body>
 </html>
