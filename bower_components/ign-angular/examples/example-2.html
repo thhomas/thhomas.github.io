@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../vendor/managed/ol3-build/build/ol.css" type="text/css">
+    <link rel="stylesheet" href="../vendor/managed/bootstrap/dist/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../src/css/ign-angular.css" type="text/css">
+    <style>
+    /* Space out content a bit */
+	body {
+  		padding-top: 20px;
+  		padding-bottom: 20px;
+  		font: 'Open-Sans';
+	}
+	@media (min-width: 1400px) {
+		.container {
+			width: 1370px;
+		}
+	}
+    
+    </style>
+</head>
+<body ng-app="example2">
+<!-- 	<div class="container" spinner-loading="viewLoading"> -->
+		<div class="container-fluid" ng-controller="MainCtrl" style="height:500px;">
+		  <div ol-map controls="['display', 'tuning']" map-id="1"></div>
+      <div ol-map mapObject="map2" map-id="2"></div>
+		</div>
+	
+  <script src="../vendor/managed/angular/angular.js"></script>
+  <script src="../vendor/managed/jquery/dist/jquery.min.js"></script>
+  <script src="../vendor/managed/ol3-build/build/ol.js"></script>
+  <script src="../vendor/managed/ol3-cesium/dist/Cesium/Cesium.js"></script>
+  <script src="../vendor/managed/ol3-cesium/dist/ol3cesium.js"></script>
+  <script src="../vendor/managed/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="../vendor/managed/spin.js/spin.js"></script>
+  <script src="../vendor/managed/angular-spinner/angular-spinner.js"></script>
+  <script src="../vendor/managed/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="../vendor/managed/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+  <script src="../vendor/managed/jquery-xml2json/src/xml2json.js"></script>
+<!--  <script src="../dist/ign-angular.js"></script> -->
+  <script src="../src/js/geocoder/geocoder.js"></script>
+  <script src="../src/js/layer/layer.js"></script>
+  <script src="../src/js/layer/layercheckbox.js"></script>
+  <script src="../src/js/layer/layerselector.js"></script>
+  <script src="../src/js/layer/layerservice.js"></script>
+  <script src="../src/js/map/control.js"></script>
+  <script src="../src/js/map/map.js"></script>
+	<script src="example-2.js"></script>
+</body>
+</html>

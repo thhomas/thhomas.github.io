@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../vendor/managed/ol3-build/build/ol.css" type="text/css">
+  <link rel="stylesheet" href="../vendor/managed/bootstrap/dist/css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="../vendor/managed/seiyria-bootstrap-slider/css/bootstrap-slider.css" type="text/css">
+<!--     <link rel="stylesheet" href="../dist/ign-angular.css" type="text/css"> -->
+  <link rel="stylesheet" href="../src/css/ign-angular.css" type="text/css">
+  <style>
+    .map {
+      padding-top: 50px;
+    }
+  </style>
+  
+  <meta charset="UTF-8">
+</head>
+<body ng-app="example1" ng-controller="MainCtrl">
+<div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom:0px" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#evoterr-navbar-collapse" ng-click="setHeight()" style="">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="evoterr-navbar-collapse" style="background-color: white;">
+        <form class="navbar-form navbar-left" role="search">Layers
+<!--           <layer-selector wmts-url="['http://wxs.ign.fr/2mqbg0z6cx7ube8gsou10nrt/wmts?Service=WMTS&request=GetCapabilities']" wms-url="{{wmsUrl1}}" index="0"></layer-selector> -->
+          <layer-selector wmts-url="{{wmtsUrl2}}" wms-url="{{wmsUrl1}}" index="0"></layer-selector>
+          <layer-selector wmts-url="{{wmtsUrl2}}" index="1"></layer-selector>
+<!--           <layer-checkbox map-object="map" wmts-url="'http://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS/1.0.0/WMTSCapabilities.xml'" layer-name="World_Imagery" index="2"></layer-checkbox> -->
+<!--           <layer-checkbox map-object="map" wfs-url="'http://espace.toulouse.ign.fr:8080/cgi/cgi-bin/proxy.cgi?url=http://wxs-i.ign.fr/ifdag24bifbn3mavuxsp5bh4/geoportail/wfs&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetCapabilities'" layer-name="BDPARCELLAIRE-VECTEUR_WLD_BDD_WGS84G:arrondissement"></layer-checkbox> -->
+        </form>
+        <form class="navbar-form navbar-right">
+           <geocoder geocoderUrl="http://wxs.ign.fr/61fs25ymczag0c67naqvvmap/ols/apis/completion" map-object="map"></geocoder>
+        </form>
+      </div> <!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav><!-- /.navbar-default-->
+  <div ol-map controls="['display', 'permalink', 'tuning', '3d']" class="map"></div>
+<!--   <div class="right-menu col-fixed-65-right" style="background-color:red;"> -->
+<!--     <li><span class="glyphicon-resize-vertical"></span></li> -->
+<!--   </div> -->
+  <footer class="footer">
+    Powered by <a href="http://angularjs.org">AngularJS</a>, <a href="http://openlayers.org/">OpenLayers3</a> and <a href="http://glyphicons.com">Glyphicons</a><span></span>
+    <span class="pull-right"> Renderer: {{renderer}}</span>
+  </footer>
+</div>
+	<script src="../vendor/managed/angular/angular.js"></script>
+	<script src="../vendor/managed/jquery/dist/jquery.min.js"></script>
+  <script src="../vendor/managed/ol3-build/build/ol-debug.js"></script>
+  <script src="../vendor/managed/ol3-cesium/dist/Cesium/Cesium.js"></script>
+  <script src="../vendor/managed/ol3-cesium/dist/ol3cesium.js"></script>
+	<script src="../vendor/managed/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="../vendor/managed/spin.js/spin.js"></script>
+	<script src="../vendor/managed/angular-spinner/angular-spinner.js"></script>
+  <script src="../vendor/managed/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="../vendor/managed/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+  <script src="../vendor/managed/jquery-xml2json/src/xml2json.js"></script>
+<!-- 	<script src="../dist/ign-angular.js"></script> -->
+  <script src="../src/js/geocoder/geocoder.js"></script>
+  <script src="../src/js/layer/layer.js"></script>
+  <script src="../src/js/layer/layercheckbox.js"></script>
+  <script src="../src/js/layer/layerselector.js"></script>
+  <script src="../src/js/layer/layerservice.js"></script>
+  <script src="../src/js/map/control.js"></script>
+  <script src="../src/js/map/map.js"></script>
+	<script src="example-1.js"></script>
+</body>
+</html>

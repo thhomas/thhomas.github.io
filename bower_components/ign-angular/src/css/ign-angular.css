@@ -1,0 +1,241 @@
+
+.map {
+  width:100%;
+  float:left;
+}
+
+#mapDiv {
+    float: left;
+    width: 100%;
+}
+
+#mapRow {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#sliderRow {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.mapDouble {
+	width: 50% !important;
+	float: left;
+}
+
+.ol-custom-control {
+  position: absolute;
+  top: 65px;
+  left: 8px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 4px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+
+.ol-custom-control {
+  position: absolute;
+  top: 65px;
+  left: 8px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 4px;
+  padding: 2px;
+  cursor: pointer;
+}
+.scope-view {
+  top: 80px;
+}
+
+.vertical-slider {
+  top: 120px;
+}
+.ol-custom-control a {
+  display: block;
+  color: white;
+  font-size: 16px;
+  font-family: 'Lucida Grande',Verdana,Geneva,Lucida,Arial,Helvetica,sans-serif;
+  font-weight: bold;
+  margin: 1px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 2px;
+  height: 22px;
+  width: 22px;
+  background: rgba(0,60,136,0.5);
+}
+.ol-touch .ol-custom-control a {
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  line-height: 26px;
+}
+.ol-custom-control a:hover {
+  background: rgba(0,60,136,0.7);
+}
+
+.ol-display-group-control {
+  top: 11.68em;
+  left: 0.5em;
+}
+
+.ol-tuning-group-control {
+  top: 0.5em;
+  right: 0.5em;
+  height: 28px;
+  width: 28px;
+}
+
+.ol-tuning-menu {
+  background-color: rgba(255,255,255,.4);;
+  overflow:auto;
+  right: 0px;
+  top: 26px;
+  width: 200px;
+  float: right;
+  border-radius: 2px;
+}
+
+.ol-tuning-ul {
+  margin: 3px;
+  padding: 3px;
+  border-radius: 2px;
+}
+
+.ol-tuning-ul>li>a {
+  color: rgba(0,60,136,0.7);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.ol-tuning-ul>li>label {
+  font-size: 12px;
+}
+
+.ol-tuning-ul>li>button  {
+  float: right;
+}
+
+.ol-tuning-menu-hidden {
+  display: none;
+}
+
+.ol-tuning-button {
+  right:0px;
+}
+
+.ol-permalink-control {
+  top: 7em;
+  left: 0.5em;
+  height: 28px;
+}
+
+.ol-permalink-menu {
+  position: absolute;
+  left: 2em;
+  background-color: rgba(255,255,255,.4);;
+  overflow:auto;
+  right: 0px;
+  top: 0px;
+  width: 154px;
+  float: right;
+  border-radius: 2px;
+  min-height: 0px;
+}
+
+.ol-globe-control {
+  top: 9.34em;
+  left: 0.5em;
+  height: 28px;
+}
+
+.ol-custom-has-tooltip span[role=tooltip]{
+  top: 3em;
+}
+
+.ol-has-tooltip-right span[role=tooltip]{
+  left: auto !important;
+  right: 2.2em;
+  top: 0.2em;
+  border-right-width:0 !important;
+  border-left-width: 3px !important;
+  border-radius: 4px 0 0 4px !important;
+}
+
+
+.ol-button-clicked {
+  background-color: rgba(0,60,136,0.7) !important;
+}
+
+.ol-display-group-control .ol-scope {
+  border-radius: 2px 2px 0 0;
+}
+
+.ol-display-group-control {
+  border-radius: 4px 4px 4px 4px;
+}
+
+.ol-display-group-control .ol-clip-layer {
+  border-radius: 0 0 2px 2px;
+}
+
+.ol-mouseinfo-control {
+  top: 38px;
+  right: 8px;
+  position: absolute;
+}
+
+#scopeButton {
+  border-radius: 2px 2px 0px 0px;
+}
+#verticalSliderButton, #horizontalSliderButton, #clipLayerButton {
+  border-radius: 0px 0px 0px 0px;
+}
+#doubleMapButton {
+  border-radius: 0px 0px 2px 2px;
+}
+
+input[type=range]:disabled::-moz-range-thumb { cursor: default;}
+input[type=range]:disabled::-ms-thumb { cursor: default;}
+input[type=range]:disabled::-webkit-slider-thumb { cursor: default;}
+input[type=range]:disabled { cursor: default; }
+
+.slider .slider-track {
+  background-color: rgba(255,255,255,.6);
+  background-image: none;
+}
+
+.slider .slider-selection {
+  background-image: none;
+}
+
+.slider.slider-vertical .slider-handle {
+  margin-left: 1px;
+  width: 8px;
+}
+
+.slider.slider-horizontal .slider-handle {
+  height: 8px;
+  margin-top: 1px;
+}
+
+.slider-handle {
+  background-color: rgba(0,60,136,.5);
+  background-image: none;
+}
+
+div.slider-handle:hover {
+  background: rgba(0,60,136,0.7);
+}
+
+
+.ign-layerselector {
+  width: 200px;
+}
+
+.ign-marker {
+  width: 21px;
+  height: 21px;
+  background-image: url('../images/cross2.png');
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ol3-cesium",
+  "homepage": "https://github.com/thhomas/ol3-cesium",
+  "_release": "15b589be89",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "15b589be893bbdbf0d802d9906569813614f470d"
+  },
+  "_source": "https://github.com/thhomas/ol3-cesium.git",
+  "_target": "master",
+  "_originalSource": "https://github.com/thhomas/ol3-cesium.git"
+}

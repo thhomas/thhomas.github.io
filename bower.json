@@ -1,0 +1,9 @@
+{
+    "name": "thhomas.github.io",
+    "version": "0.1.0",
+    "dependencies":{
+      "ign-angular": "https://github.com/thhomas/ign-angular.git#master"
+    },
+    "devDependencies":{
+    }
+}
